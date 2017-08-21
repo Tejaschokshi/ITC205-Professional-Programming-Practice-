@@ -31,7 +31,7 @@ public class EntryController
 			IEntryUI ui) {
 		//TODO Implement constructor
 	
-	EntryController()
+	EntryController ();
 
 	}
 
