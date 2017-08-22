@@ -55,6 +55,17 @@ public class ExitController
              exitime = System.currentTimeMillies ();
              if (adhocTicket != null && adhocTicket.ispaid()){
                  setState (STATE.Processed );
+}
+             else {
+                 ui.beep();
+                 setState(STATE.REJECTED);
+             }
+                 
+         }
+             else if (carpark.isSeasonTicketValid(ticketStr) &&
+                      carpark.isSeasonTicketInuse(ticketStr)){
+                 SeasonTicket = ticketStr;
+    	          setState(STATE.PROCESSED); 
 		// TODO Auto-generated method stub
 		
 	}
