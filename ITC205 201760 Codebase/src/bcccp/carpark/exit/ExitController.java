@@ -78,7 +78,7 @@ public class ExitController
                 ui.beep();
                     ui.discardTicket();
                     Log("ticketInserted:calledd ehile an incoorect state");
-                    
+                    setState(STATE.REJECTED);
               
         }
 		// TODO Auto-generated method stub
@@ -89,7 +89,21 @@ public class ExitController
 
 	@Override
 	public void ticketTaken() {
-		// TODO Auto-generated method stub
+            
+            If (state == STATE.PROCESSED) {
+            exitGate.raise ();
+            setState( STATE.TAKEN );
+        }
+            else if (State == STATE.REJECTED ){
+                    SetState(STATE.WAITING);
+            }
+            else {
+                ui.beep();
+                     log("ticketTaken:calledd ehile an incoorect state");
+                    
+        }
+            
+// TODO Auto-generated method stub
 		
 	}
 
