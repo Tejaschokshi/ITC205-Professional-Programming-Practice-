@@ -90,7 +90,14 @@ public class ExitController
              exitGate.raise ();
              setState( STATE.TAKEN );
          }
-                    
+             else if (State == STATE.REJECTED ){
+                     SetState(STATE.WAITING);
+             }
+             else {
+                 ui.beep();
+                      log("ticketTaken:calledd ehile an incoorect state");
+                                 
+        
 		// TODO Auto-generated method stub
 		
 	}
