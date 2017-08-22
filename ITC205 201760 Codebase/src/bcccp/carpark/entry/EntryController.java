@@ -28,10 +28,11 @@ public class EntryController
 	public EntryController(Carpark carpark, IGate entryGate, 
 			ICarSensor os, 
 			ICarSensor is,
-			IEntryUI ui) {
+			IEntryUI ui) 
+        {
 		//TODO Implement constructor
 	
-	EntryController ();
+	Public EntryController(int carpark carpark, ); 
 
 	}
 
