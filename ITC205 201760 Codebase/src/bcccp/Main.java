@@ -22,7 +22,6 @@ import bcccp.tickets.season.UsageRecordFactory;
 
 public class Main {
 
-//This is test Comment Please Ignore
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
