@@ -66,6 +66,15 @@ public class ExitController
                       carpark.isSeasonTicketInuse(ticketStr)){
                  SeasonTicket = ticketStr;
     	          setState(STATE.PROCESSED); 
+ }
+             else {
+                 ui.beep();
+                 setState(STATE.REJECTED);
+             }
+             else {
+                 ui.beep();
+                     ui.discardTicket();
+                  Log("ticketInserted:calledd ehile an incoorect state");
 		// TODO Auto-generated method stub
 		
 	}
