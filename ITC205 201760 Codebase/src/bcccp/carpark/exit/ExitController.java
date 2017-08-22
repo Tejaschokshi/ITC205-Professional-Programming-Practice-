@@ -32,15 +32,16 @@ public class ExitController
             this.is = is;
             this.os = os;
             this.ui = ui;
-            
-            
-            os.resgisterResponder(this);
+             os.resgisterResponder(this);
             is.resgisterResponder(this);
             ui.resgisterResponder(this);
          
             prevState = STATE.IDLE;
             setState( STATE.IDLE);
             
+            
+            
+           
             
           
             
@@ -51,6 +52,35 @@ public class ExitController
 
 	@Override
 	public void ticketInserted(String ticketStr) {
+            If (state == STATE.WAITING){
+            if (isADhocTicket(ticketStr)){
+            adhocTicket = carpark.get.ADhocTicket(ticketStr);
+            exitime = System.currentTimeMillies ();
+            if (adhocTicket != null && adhocTicket.ispaid()){
+                setState (STATE.Processed );
+            }
+            else {
+                ui.beep();
+                setState(STATE.REJECTED);
+            }
+                
+        }
+            else if (carpark.isSeasonTicketValid(ticketStr) &&
+                     carpark.isSeasonTicketInuse(ticketStr)){
+                SeasonTicket = ticketStr;
+                setState(STATE.PROCESSED); 
+            }
+            else {
+                ui.beep();
+                setState(STATE.REJECTED);
+            }
+            else {
+                ui.beep();
+                    ui.discardTicket();
+                    Log("ticketInserted:calledd ehile an incoorect state");
+                    
+              
+        }
 		// TODO Auto-generated method stub
 		
 	}
